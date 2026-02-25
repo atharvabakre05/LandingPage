@@ -10,7 +10,18 @@ const passNames = {
 };
 
 // Modal functionality
+function togglePassDropdown() {
+    const dropdown = document.getElementById('passDropdown');
+    dropdown.classList.toggle('active');
+}
+
 function openModal(passType) {
+    // Close dropdown if open
+    const dropdown = document.getElementById('passDropdown');
+    if (dropdown) {
+        dropdown.classList.remove('active');
+    }
+    
     const modal = document.getElementById('purchaseModal');
     const selectedPassType = document.getElementById('selectedPassType');
     const selectedPrice = document.getElementById('selectedPrice');
@@ -23,6 +34,16 @@ function openModal(passType) {
     modal.classList.add('active');
     document.body.style.overflow = 'hidden';
 }
+
+// Close dropdown when clicking outside
+document.addEventListener('click', function(event) {
+    const dropdown = document.getElementById('passDropdown');
+    const dropdownButton = document.querySelector('.pass-dropdown .btn-primary');
+    
+    if (dropdown && !dropdown.contains(event.target) && !dropdownButton.contains(event.target)) {
+        dropdown.classList.remove('active');
+    }
+});
 
 function closeModal() {
     const modal = document.getElementById('purchaseModal');

@@ -42,7 +42,22 @@
                     </div>
                     
                     <div class="hero-ctas">
-                        <button class="btn btn-primary" onclick="openModal('student')">Book Your Pass</button>
+                        <div class="pass-dropdown">
+                            <button class="btn btn-primary" onclick="togglePassDropdown()">Book Your Pass</button>
+                            <div class="dropdown-menu" id="passDropdown">
+                                <div class="dropdown-item" onclick="openModal('student')">
+                                    <span class="pass-name">Student Pass</span>
+                                    <span class="price">₹999</span>
+                                </div>
+                                <div class="dropdown-item" onclick="openModal('parent')">
+                                    <span class="pass-name">Student + Parent Pass</span>
+                                    <div class="right-content">
+                                        <span class="price">₹1,499</span>
+                                        <span class="badge">Recommended</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <button class="btn btn-secondary" onclick="document.getElementById('includes').scrollIntoView({behavior: 'smooth'})">Explore the Experience</button>
                     </div>
                 </div>
@@ -196,7 +211,7 @@
                 </div>
                 
                 <div class="pass-card featured">
-                    <div class="pass-badge">Recommended for better decision-making</div>
+                    <div class="pass-badge">Recommended</div>
                     <div class="pass-header">
                         <h3>Student + Parent Pass</h3>
                         <div class="pass-price">
