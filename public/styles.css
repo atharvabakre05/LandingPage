@@ -6,19 +6,20 @@
 }
 
 :root {
-    --primary-color: #6366f1;
-    --primary-dark: #4f46e5;
-    --primary-light: #818cf8;
-    --secondary-color: #f59e0b;
-    --text-dark: #1f2937;
-    --text-light: #6b7280;
-    --text-lighter: #9ca3af;
-    --bg-light: #f9fafb;
+    --primary-color: #5CC8FF;
+    --primary-dark: #4FB8E8;
+    --primary-light: #7DD8FF;
+    --accent-color: #D9483B;
+    --secondary-neutral: #7D7F8C;
+    --text-dark: #424359;
+    --text-light: #7D7F8C;
+    --text-lighter: #9CA0AF;
+    --bg-light: #F2F2F2;
     --bg-white: #ffffff;
-    --border-color: #e5e7eb;
+    --border-color: #E5E7EB;
     --success-color: #10b981;
-    --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    --gradient-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    --gradient-primary: linear-gradient(135deg, #5CC8FF 0%, #4FB8E8 100%);
+    --gradient-secondary: linear-gradient(135deg, #D9483B 0%, #C73A2B 100%);
     --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
     --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
     --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
@@ -136,6 +137,14 @@ body {
     align-items: center;
 }
 
+.event-date {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
 .hero-title {
     font-size: 3.5rem;
     font-weight: 800;
@@ -150,6 +159,13 @@ body {
     color: rgba(255, 255, 255, 0.9);
     margin-bottom: 2rem;
     line-height: 1.6;
+}
+
+.hero-description {
+    color: rgba(255, 255, 255, 0.92);
+    font-weight: 500;
+    line-height: 1.6;
+    margin-bottom: 2rem;
 }
 
 .event-details {
@@ -337,19 +353,25 @@ body {
 
 .includes-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
 }
 
 .include-card {
     background: white;
     border-radius: 16px;
-    padding: 2rem;
-    box-shadow: var(--shadow-md);
-    transition: var(--transition);
-    border: 1px solid var(--border-color);
+    padding: 1.2rem;
+    text-align: center;
     position: relative;
     overflow: hidden;
+    transition: all 0.2s ease;
+    height: auto;
+    min-height: 140px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 1px solid var(--border-color);
+    cursor: default;
 }
 
 .include-card::before {
@@ -365,8 +387,8 @@ body {
 }
 
 .include-card:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-xl);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
 }
 
 .include-card:hover::before {
@@ -374,25 +396,22 @@ body {
 }
 
 .card-icon {
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     border-radius: 12px;
     background: var(--gradient-primary);
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 1.5rem;
-}
-
-.card-icon i {
-    font-size: 1.5rem;
+    margin: 0 auto 1rem;
+    font-size: 1.2rem;
     color: white;
 }
 
 .include-card h3 {
-    font-size: 1.25rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0;
     color: var(--text-dark);
 }
 
@@ -857,7 +876,11 @@ textarea {
         align-items: center;
     }
     
-    .includes-grid,
+    .includes-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+    
     .passes-grid {
         grid-template-columns: 1fr;
     }
@@ -927,6 +950,10 @@ textarea {
         padding-left: 1rem;
         padding-right: 1rem;
     }
+    
+    .includes-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* Smooth scrolling */
@@ -966,4 +993,19 @@ html {
 
 ::-webkit-scrollbar-thumb:hover {
     background: var(--primary-dark);
+}
+
+/* Clickable Location Styles */
+.location-clickable {
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border-radius: 8px;
+    padding: 8px;
+    margin: -8px;
+}
+
+.location-clickable:hover {
+    background-color: rgba(92, 200, 255, 0.1);
+    box-shadow: 0 0 0 2px rgba(92, 200, 255, 0.3);
+    transform: scale(1.02);
 }

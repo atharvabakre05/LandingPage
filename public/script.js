@@ -1,10 +1,12 @@
 // Pass pricing data
 const passPrices = {
-    standard: 1499
+    student: 999,
+    parent: 1499
 };
 
 const passNames = {
-    standard: 'Event Pass'
+    student: 'Student Pass',
+    parent: 'Student + Parent Pass'
 };
 
 // Modal functionality
