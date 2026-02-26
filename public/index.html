@@ -3,18 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Career-A-Fair by PREPPER | Discover Where You Truly Belong</title>
+    <title>Career-A-Fair 2026 | Nagpur's Premier Career Discovery Event</title>
+    <meta name="description" content="Stop guessing your future. Career-A-Fair 2026 brings students, parents, and top universities together for data-driven career clarity at Chitnavis Centre, Nagpur.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+    <!-- Sticky Mobile CTA -->
+    <div class="sticky-cta" id="mobileSticky">
+        <div>
+            <div style="font-size: 0.75rem; font-weight: 700; color: var(--caf-muted);">NAGPUR 2026</div>
+            <div style="font-weight: 800; color: var(--caf-navy);">Passes from ₹999</div>
+        </div>
+        <a href="#passes" class="btn btn-primary" style="padding: 0.75rem 1.5rem;">Buy Pass</a>
+    </div>
+
     <!-- Hero Section -->
     <header class="hero">
         <nav class="navbar">
             <div class="container">
                 <div class="nav-brand">
-                    <h1>PREPPER</h1>
+                    <h1>CAF <span style="color: var(--caf-cyan);">NAGPUR</span></h1>
                 </div>
                 <div class="nav-links">
                     <a href="#includes" class="nav-link">What's Included</a>
@@ -27,10 +41,10 @@
         <section class="hero-content">
             <div class="container">
                 <div class="hero-text">
-                    <div class="event-date">Date: February 11, 2026</div>
-                    <h1 class="hero-title">Career-A-Fair</h1>
-                    <h2 class="hero-subtitle">Discover Where You Truly Belong</h2>
-                    <p class="hero-description">An immersive career discovery experience designed for students of Grades 11–12 and undergraduates to gain clarity, confidence, and direction.</p>
+                    <div class="badge">Registration Open for Nagpur</div>
+                    <div class="event-date">November 14-16, 2026</div>
+                    <h1 class="hero-title">Discover your true calling.</h1>
+                    <h2 class="hero-subtitle">Career-A-Fair 2026 is Nagpur's largest career discovery ecosystem, helping students and parents navigate the complex world of modern professional paths.</h2>
                     
                             <div class="event-details">
                         <div class="event-info">
@@ -43,7 +57,7 @@
                     
                     <div class="hero-ctas">
                         <div class="pass-dropdown">
-                            <button class="btn btn-primary" onclick="togglePassDropdown()">Book Your Pass</button>
+                            <button class="btn btn-primary" onclick="togglePassDropdown()">Book Participant Pass</button>
                             <div class="dropdown-menu" id="passDropdown">
                                 <div class="dropdown-item" onclick="openModal('student')">
                                     <span class="pass-name">Student Pass</span>
@@ -58,7 +72,7 @@
                                 </div>
                             </div>
                         </div>
-                        <button class="btn btn-secondary" onclick="document.getElementById('includes').scrollIntoView({behavior: 'smooth'})">Explore the Experience</button>
+                        <a href="#careers" class="btn btn-secondary">Explore 100+ Careers</a>
                     </div>
                 </div>
                 
@@ -82,19 +96,19 @@
         </section>
     </header>
 
-    <!-- About Career-A-Fair -->
-    <section id="includes" class="includes-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>About Career-A-Fair</h2>
-            </div>
-            
-            <div class="about-content">
-                <p>Career-A-Fair is a structured offline career discovery experience designed to help students gain clarity about their future through guided exploration and expert-backed insights.</p>
-                
-                <p>Students often face confusion when choosing streams, degrees, and long term career paths due to lack of structured direction. Career-A-Fair addresses this gap by providing a focused environment where students can understand their strengths, explore suitable career directions, and gain practical clarity about their next steps.</p>
-                
-                <p>The experience is designed to be intuitive, insightful, and actionable enabling students to move forward with confidence and informed decision-making.</p>
+    <!-- The Problem Section -->
+    <section class="section-padding container">
+        <div class="problem-box">
+            <h2 class="text-center mb-8">Why Clarity Matters</h2>
+            <div class="grid grid-2">
+                <div>
+                    <h3 class="mb-4" style="color: #E11D48;">The 93% Awareness Gap</h3>
+                    <p class="mb-4">Recent studies show that **93% of Indian students** are aware of only seven career options. This limited perspective leads to crowded fields and untapped potential.</p>
+                </div>
+                <div>
+                    <h3 class="mb-4" style="color: #E11D48;">Financial Risk</h3>
+                    <p class="mb-4">Spending on a 4-year degree without industry alignment is a heavy financial burden. Career-A-Fair mitigates this risk by providing data-driven roadmaps.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -184,55 +198,108 @@
             </div>
         </div>
     </section>
+
+    <!-- 100+ Careers Section -->
+    <section id="careers" class="section-padding container">
+        <div class="text-center mb-8">
+            <h2 class="mb-4">Explore 100+ Career Path Directories</h2>
+            <p>From traditional excellence to futuristic disruption—find your fit.</p>
+        </div>
+        
+        <div class="career-grid">
+            <!-- STEM -->
+            <div class="career-category">
+                <h3 class="category-title">STEM & Engineering</h3>
+                <div class="career-tag-container">
+                    <span class="career-tag">AI Engineer</span> <span class="career-tag">Data Scientist</span> <span class="career-tag">Full Stack Developer</span> 
+                    <span class="career-tag">Cybersecurity Specialist</span> <span class="career-tag">Robotics Engineer</span> <span class="career-tag">Aerospace Engineer</span> 
+                    <span class="career-tag">Biotech Researcher</span> <span class="career-tag">Cloud Architect</span> <span class="career-tag">Blockchain Developer</span> 
+                    <span class="career-tag">UX Designer</span> <span class="career-tag">Game Developer</span> <span class="career-tag">Renewable Energy Engineer</span> 
+                    <span class="career-tag">Nano-technologist</span> <span class="career-tag">Bioinformatics</span> <span class="career-tag">AR/VR Specialist</span> 
+                    <span class="career-tag">Civil Engineer</span> <span class="career-tag">Chemical Scientist</span> <span class="career-tag">Pharmacologist</span>
+                    <span class="career-tag">Network Engineer</span> <span class="career-tag">Embedded Systems Expert</span> <span class="career-tag">Geneticist</span>
+                    <span class="career-tag">Marine Engineer</span> <span class="career-tag">Material Scientist</span> <span class="career-tag">IoT Architect</span>
+                </div>
+            </div>
+
+            <!-- Commerce -->
+            <div class="career-category">
+                <h3 class="category-title">Commerce, Finance & Management</h3>
+                <div class="career-tag-container">
+                    <span class="career-tag">Investment Banker</span> <span class="career-tag">Chartered Accountant</span> <span class="career-tag">Brand Manager</span> 
+                    <span class="career-tag">Fintech Analyst</span> <span class="career-tag">Venture Capitalist</span> <span class="career-tag">Actuary</span> 
+                    <span class="career-tag">Supply Chain Manager</span> <span class="career-tag">Digital Marketer</span> <span class="career-tag">HR Analyst</span> 
+                    <span class="career-tag">Entrepreneur</span> <span class="career-tag">Forensic Accountant</span> <span class="career-tag">Business Consultant</span>
+                    <span class="career-tag">Stock Broker</span> <span class="career-tag">Corporate Secretary</span> <span class="career-tag">Tax Consultant</span>
+                    <span class="career-tag">Wealth Manager</span> <span class="career-tag">Risk Analyst</span> <span class="career-tag">E-commerce Manager</span>
+                    <span class="career-tag">Operations Lead</span> <span class="career-tag">Market Researcher</span> <span class="career-tag">Economist</span>
+                    <span class="career-tag">Auditor</span> <span class="career-tag">Retail Strategist</span> <span class="career-tag">Social Entrepreneur</span>
+                </div>
+            </div>
+
+            <!-- Humanities -->
+            <div class="career-category">
+                <h3 class="category-title">Humanities, Arts & Law</h3>
+                <div class="career-tag-container">
+                    <span class="career-tag">Corporate Lawyer</span> <span class="career-tag">Clinical Psychologist</span> <span class="career-tag">Policy Analyst</span> 
+                    <span class="career-tag">Digital Journalist</span> <span class="career-tag">Interior Designer</span> <span class="career-tag">Fashion Merchandiser</span> 
+                    <span class="career-tag">Event Planner</span> <span class="career-tag">Social Media Manager</span> <span class="career-tag">Public Relations</span> 
+                    <span class="career-tag">Archaeologist</span> <span class="career-tag">International Relations</span> <span class="career-tag">Linguist</span>
+                    <span class="career-tag">Creative Writer</span> <span class="career-tag">Graphic Designer</span> <span class="career-tag">Human Rights Activist</span>
+                    <span class="career-tag">Animator</span> <span class="career-tag">User Researcher</span> <span class="career-tag">Anthropologist</span>
+                    <span class="career-tag">Hotel Manager</span> <span class="career-tag">Travel Consultant</span> <span class="career-tag">Curator</span>
+                    <span class="career-tag">Legal Advisor</span> <span class="career-tag">Content Strategist</span> <span class="career-tag">Urban Planner</span>
+                </div>
+            </div>
+
+            <!-- Healthcare & Specialized -->
+            <div class="career-category">
+                <h3 class="category-title">Healthcare & New-Age Specialized</h3>
+                <div class="career-tag-container">
+                    <span class="career-tag">Telemedicine Expert</span> <span class="career-tag">Nutritionist</span> <span class="career-tag">Physiotherapist</span> 
+                    <span class="career-tag">Sports Scientist</span> <span class="career-tag">Hospital Administrator</span> <span class="career-tag">Occupational Therapist</span> 
+                    <span class="career-tag">Pilot</span> <span class="career-tag">Sustainability Consultant</span> <span class="career-tag">Agri-tech Specialist</span> 
+                    <span class="career-tag">Meteorologist</span> <span class="career-tag">Food Technologist</span> <span class="career-tag">Speech Pathologist</span>
+                    <span class="career-tag">Epidemiologist</span> <span class="career-tag">Vet Surgeon</span> <span class="career-tag">Astrophysicist</span>
+                    <span class="career-tag">Geologist</span> <span class="career-tag">Landscape Architect</span> <span class="career-tag">Data Ethicist</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Passes & Purchase Section -->
-    <section id="passes" class="passes-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>Choose Your Pass</h2>
-                <p>Select the perfect pass for your career discovery journey</p>
+    <section id="passes" class="section-padding container">
+        <h2 class="text-center mb-8">Secure Your Nagpur Pass</h2>
+        <div class="grid grid-2" style="max-width: 900px; margin: 0 auto;">
+            <!-- Student Pass -->
+            <div class="card pricing-card">
+                <div class="badge">Individual</div>
+                <h3>Student Participant Pass</h3>
+                <div style="color: var(--caf-navy); font-weight: 600; font-size: 0.9rem;">(Covers 1 Student + 1 Parent)</div>
+                <div class="price">₹999 <small style="font-size: 1rem; font-weight: 400; color: var(--caf-muted);">+ GST</small></div>
+                <ul class="mb-8" style="font-size: 0.95rem; flex-grow: 1;">
+                    <li class="mb-2">✅ 3-Day Entry Access</li>
+                    <li class="mb-2">✅ Workshop Participation</li>
+                    <li class="mb-2">✅ Digital Certificate</li>
+                    <li class="mb-2">✅ Personalized Career Roadmap</li>
+                </ul>
+                <div style="color: #E11D48; font-weight: 700; font-size: 0.8rem; margin-bottom: 1rem;">* NO REFUNDS POLICY</div>
+                <button onclick="openModal('student')" class="btn btn-primary" style="width: 100%;">Book Student Pass</button>
             </div>
-            
-            <div class="passes-grid">
-                <div class="pass-card">
-                    <div class="pass-header">
-                        <h3>Student Pass</h3>
-                        <div class="pass-price">
-                            <span class="currency">₹</span>
-                            <span class="amount">999</span>
-                        </div>
-                    </div>
-                    <div class="pass-features">
-                        <ul>
-                            <li><i class="fas fa-check"></i> Full access to the Career-A-Fair experience</li>
-                            <li><i class="fas fa-check"></i> Includes personalized career insight report</li>
-                        </ul>
-                    </div>
-                    <button class="btn btn-primary" onclick="openModal('student')">Book Student Pass</button>
-                </div>
-                
-                <div class="pass-card featured">
-                    <div class="pass-badge">Recommended</div>
-                    <div class="pass-header">
-                        <h3>Student + Parent Pass</h3>
-                        <div class="pass-price">
-                            <span class="currency">₹</span>
-                            <span class="amount">1,499</span>
-                        </div>
-                    </div>
-                    <div class="pass-features">
-                        <ul>
-                            <li><i class="fas fa-check"></i> Student can attend along with one parent/guardian</li>
-                            <li><i class="fas fa-check"></i> Encourages joint career discussion</li>
-                            <li><i class="fas fa-check"></i> Better value compared to individual passes</li>
-                            <li><i class="fas fa-check"></i> Shared career clarity experience</li>
-                        </ul>
-                    </div>
-                    <button class="btn btn-primary" onclick="openModal('parent')">Book Value Pass</button>
-                </div>
-            </div>
-            
-            <div class="seats-notice">
-                <p><i class="fas fa-info-circle"></i> Limited seats available. Offline capacity event.</p>
+            <!-- Family Bundle -->
+            <div class="card pricing-card popular">
+                <div class="badge">Family Favorite</div>
+                <h3>Family Bundle</h3>
+                <div style="color: var(--caf-navy); font-weight: 600; font-size: 0.9rem;">(Covers 2 Parents + 2 Children)</div>
+                <div class="price">₹1,499 <small style="font-size: 1rem; font-weight: 400; color: var(--caf-muted);">+ GST</small></div>
+                <ul class="mb-8" style="font-size: 0.95rem; flex-grow: 1;">
+                    <li class="mb-2">✅ 4 All-Access Passes</li>
+                    <li class="mb-2">✅ Priority Workshop Entry</li>
+                    <li class="mb-2">✅ Private Counselor Session (15m)</li>
+                    <li class="mb-2">✅ Education Finance Toolkit</li>
+                </ul>
+                <div style="color: #E11D48; font-weight: 700; font-size: 0.8rem; margin-bottom: 1rem;">* NO REFUNDS POLICY</div>
+                <button onclick="openModal('parent')" class="btn btn-primary" style="width: 100%;">Book Family Bundle</button>
             </div>
         </div>
     </section>
@@ -248,6 +315,25 @@
                     <h3>Your Data is Secure & Private</h3>
                     <p>We take your privacy seriously. All assessment data is encrypted and stored securely. Your personal information is never shared without explicit consent, and all reports are confidential.</p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQs -->
+    <section class="section-padding container" style="max-width: 800px;">
+        <h2 class="text-center mb-8">FAQs</h2>
+        <div class="faq-accordion">
+            <div class="faq-item">
+                <button class="faq-question">Where is the event being held? <span>+</span></button>
+                <div class="faq-answer"><p>The event is at Chitnavis Centre, Civil Lines, Nagpur. It is one of the most accessible and premier venues in the city.</p></div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">What is the refund policy? <span>+</span></button>
+                <div class="faq-answer"><p>Career-A-Fair 2026 follows a <strong>Strict No-Refunds Policy</strong>. Once a pass is purchased, it cannot be cancelled or refunded under any circumstances.</p></div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">Can I upgrade from Student to Family Pass? <span>+</span></button>
+                <div class="faq-answer"><p>Yes, upgrades are available at the venue counter, subject to availability.</p></div>
             </div>
         </div>
     </section>
@@ -304,47 +390,32 @@
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer>
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <h3>PREPPER</h3>
-                    <p>Discover Your Ideal Career</p>
+            <div class="footer-grid">
+                <div>
+                    <div style="font-weight: 900; font-size: 1.5rem; margin-bottom: 1rem;">CAF <span style="color: var(--caf-cyan);">NAGPUR</span></div>
+                    <p style="opacity: 0.7; font-size: 0.9rem;">Empowering the next generation of Nagpur's leaders.</p>
                 </div>
-                
-                <div class="footer-links">
-                    <div class="footer-column">
-                        <h4>Event</h4>
-                        <ul>
-                            <li><a href="#includes">What's Included</a></li>
-                            <li><a href="#passes">Passes</a></li>
-                            <li><a href="#contact">Contact</a></li>
-                        </ul>
-                    </div>
-                    
-                    <div class="footer-column">
-                        <h4>Resources</h4>
-                        <ul>
-                            <li><a href="#">About PREPPER</a></li>
-                            <li><a href="#">Career Blog</a></li>
-                            <li><a href="#">Success Stories</a></li>
-                        </ul>
-                    </div>
-                    
-                    <div class="footer-column">
-                        <h4>Legal</h4>
-                        <ul>
-                            <li><a href="#">Privacy Policy</a></li>
-                            <li><a href="#">Terms of Service</a></li>
-                            <li><a href="#">Refund Policy</a></li>
-                        </ul>
-                    </div>
+                <div>
+                    <h4 style="color: var(--caf-white); margin-bottom: 1.5rem;">Legal & Compliance</h4>
+                    <ul class="compliance-box">
+                        <li class="mb-2">Organizer: [Legal Entity Name]</li>
+                        <li class="mb-2">Venue: Chitnavis Centre, Nagpur</li>
+                        <li class="mb-2">Policy: <strong>Strict No Refunds</strong></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="color: var(--caf-white); margin-bottom: 1.5rem;">Quick Links</h4>
+                    <ul class="compliance-box">
+                        <li class="mb-2"><a href="#">Terms & Conditions</a></li>
+                        <li class="mb-2"><a href="#">Privacy Policy</a></li>
+                        <li class="mb-2"><a href="#">Ticket Delivery</a></li>
+                    </ul>
                 </div>
             </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2026 PREPPER. All rights reserved. | Organized by PrepperLearn Edutech Pvt. Ltd.</p>
-                <p class="footer-tagline">Building India's Most Structured Career Clarity Ecosystem</p>
+            <div style="text-align: center; font-size: 0.8rem; opacity: 0.6;">
+                &copy; 2026 Career-A-Fair. All transactions are final. No refunds.
             </div>
         </div>
     </footer>

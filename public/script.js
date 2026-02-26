@@ -308,12 +308,26 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 // ================= INIT =================
 
-console.log("PREPPER Landing Page Loaded");
+console.log("Career-A-Fair Landing Page Loaded");
 
-
-window.PREPPER = {
-
+window.CAF = {
     openModal,
     closeModal
-
 };
+
+// FAQ Accordion
+document.querySelectorAll('.faq-question').forEach(button => {
+    button.addEventListener('click', () => {
+        const answer = button.nextElementSibling;
+        const isOpen = answer.style.maxHeight !== '0px' && answer.style.maxHeight !== '';
+        document.querySelectorAll('.faq-answer').forEach(el => el.style.maxHeight = '0px');
+        if (!isOpen) answer.style.maxHeight = answer.scrollHeight + 'px';
+    });
+});
+
+// Mobile Sticky
+window.addEventListener('scroll', () => {
+    const sticky = document.getElementById('mobileSticky');
+    if (window.scrollY > 400) sticky.classList.add('visible');
+    else sticky.classList.remove('visible');
+});
