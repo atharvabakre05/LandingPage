@@ -18,7 +18,7 @@
     <div class="sticky-cta" id="mobileSticky">
         <div>
             <div style="font-size: 0.75rem; font-weight: 700; color: var(--caf-muted);">NAGPUR 2026</div>
-            <div style="font-weight: 800; color: var(--caf-navy);">Passes from ₹999</div>
+            <div style="font-weight: 800; color: var(--caf-navy);">Passes from ₹399</div>
         </div>
         <a href="#passes" class="btn btn-primary" style="padding: 0.75rem 1.5rem;">Buy Pass</a>
     </div>
@@ -56,22 +56,8 @@
                     </div>
                     
                     <div class="hero-ctas">
-                        <div class="pass-dropdown">
-                            <button class="btn btn-primary" onclick="togglePassDropdown()">Book Participant Pass</button>
-                            <div class="dropdown-menu" id="passDropdown">
-                                <div class="dropdown-item" onclick="openModal('student')">
-                                    <span class="pass-name">Student Pass</span>
-                                    <span class="price">₹999</span>
-                                </div>
-                                <div class="dropdown-item" onclick="openModal('parent')">
-                                    <span class="pass-name">Student + Parent Pass</span>
-                                    <div class="right-content">
-                                        <span class="price">₹1,499</span>
-                                        <span class="badge">Recommended</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <!-- Book Pass scrolls smoothly to the Passes section -->
+                        <button class="btn btn-primary" onclick="scrollToPasses()">Book Pass</button>
                         <a href="#careers" class="btn btn-secondary">Explore 100+ Careers</a>
                     </div>
                 </div>
@@ -276,7 +262,7 @@
                 <div class="badge">Individual</div>
                 <h3>Student Participant Pass</h3>
                 <div style="color: var(--caf-navy); font-weight: 600; font-size: 0.9rem;">(Covers 1 Student + 1 Parent)</div>
-                <div class="price">₹999 <small style="font-size: 1rem; font-weight: 400; color: var(--caf-muted);">+ GST</small></div>
+                <div class="price">₹399 <small style="font-size: 1rem; font-weight: 400; color: var(--caf-muted);">+ GST</small></div>
                 <ul class="mb-8" style="font-size: 0.95rem; flex-grow: 1;">
                     <li class="mb-2">✅ 3-Day Entry Access</li>
                     <li class="mb-2">✅ Workshop Participation</li>
@@ -284,14 +270,14 @@
                     <li class="mb-2">✅ Personalized Career Roadmap</li>
                 </ul>
                 <div style="color: #E11D48; font-weight: 700; font-size: 0.8rem; margin-bottom: 1rem;">* NO REFUNDS POLICY</div>
-                <button onclick="openModal('student')" class="btn btn-primary" style="width: 100%;">Book Student Pass</button>
+                <button onclick="selectPass('student', this)" class="btn btn-primary" style="width: 100%;">Select Pass</button>
             </div>
             <!-- Family Bundle -->
             <div class="card pricing-card popular">
                 <div class="badge">Family Favorite</div>
                 <h3>Family Bundle</h3>
                 <div style="color: var(--caf-navy); font-weight: 600; font-size: 0.9rem;">(Covers 2 Parents + 2 Children)</div>
-                <div class="price">₹1,499 <small style="font-size: 1rem; font-weight: 400; color: var(--caf-muted);">+ GST</small></div>
+                <div class="price">₹699 <small style="font-size: 1rem; font-weight: 400; color: var(--caf-muted);">+ GST</small></div>
                 <ul class="mb-8" style="font-size: 0.95rem; flex-grow: 1;">
                     <li class="mb-2">✅ 4 All-Access Passes</li>
                     <li class="mb-2">✅ Priority Workshop Entry</li>
@@ -299,7 +285,7 @@
                     <li class="mb-2">✅ Education Finance Toolkit</li>
                 </ul>
                 <div style="color: #E11D48; font-weight: 700; font-size: 0.8rem; margin-bottom: 1rem;">* NO REFUNDS POLICY</div>
-                <button onclick="openModal('parent')" class="btn btn-primary" style="width: 100%;">Book Family Bundle</button>
+                <button onclick="selectPass('parent', this)" class="btn btn-primary" style="width: 100%;">Select Pass</button>
             </div>
         </div>
     </section>
@@ -424,44 +410,82 @@
     <div id="purchaseModal" class="modal">
         <div class="modal-content">
             <div class="modal-header">
-                <h2>Complete Your Purchase</h2>
+                <div>
+                    <h2>Complete Your Purchase</h2>
+                    <p class="modal-subtitle">Fill in your details below</p>
+                </div>
                 <button class="modal-close" onclick="closeModal()">&times;</button>
             </div>
-            
+
+            <!-- Selected Pass Banner -->
+            <div class="selected-pass-banner">
+                <div class="selected-pass-info">
+                    <span class="selected-pass-label">Selected Pass</span>
+                    <span class="selected-pass-name" id="selectedPassType">Student Participant Pass</span>
+                </div>
+                <div class="selected-pass-price">
+                    <span class="price-currency">₹</span>
+                    <span class="price-amount" id="selectedPrice">399</span>
+                    <span class="price-label">/ pass</span>
+                </div>
+            </div>
+
             <form id="purchaseForm">
-                <div class="selected-pass">
-                    <h3 id="selectedPassType">Student Pass</h3>
-                    <div class="selected-price">
-                        <span class="currency">₹</span>
-                        <span id="selectedPrice">999</span>
+                <!-- Full Name -->
+                <div class="form-group">
+                    <label for="fullName">Full Name *</label>
+                    <div class="input-icon-group">
+                        <i class="fas fa-user input-icon"></i>
+                        <input type="text" id="fullName" placeholder="Enter your full name" required>
                     </div>
                 </div>
-                
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="fullName">Full Name *</label>
-                        <input type="text" id="fullName" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email *</label>
-                        <input type="email" id="email" required>
+
+                <!-- Email -->
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <div class="input-icon-group">
+                        <i class="fas fa-envelope input-icon"></i>
+                        <input type="email" id="email" placeholder="you@example.com" required>
                     </div>
                 </div>
-                
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="phone">Phone Number *</label>
-                        <input type="tel" id="phone" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="organization">College / Organization *</label>
-                        <input type="text" id="organization" required>
+
+                <!-- Phone -->
+                <div class="form-group">
+                    <label for="phone">Phone Number *</label>
+                    <div class="input-icon-group">
+                        <i class="fas fa-phone input-icon"></i>
+                        <input type="tel" id="phone" placeholder="10-digit mobile number" required>
                     </div>
                 </div>
-                
+
+                <!-- Organization (hidden field kept for server) -->
+                <input type="hidden" id="organization" value="N/A">
+
+                <!-- Number of Passes + Dynamic Total -->
+                <div class="form-group">
+                    <label for="numPasses">Number of Passes *</label>
+                    <div class="input-icon-group">
+                        <i class="fas fa-ticket-alt input-icon"></i>
+                        <input type="number" id="numPasses" min="1" max="20" value="1" oninput="updateTotal()" required>
+                    </div>
+                </div>
+
+                <!-- Total Price Display -->
+                <div class="total-price-box">
+                    <span class="total-label">Total Amount</span>
+                    <span class="total-amount" id="totalPrice">₹399</span>
+                </div>
+
                 <input type="hidden" id="passType" name="passType">
-                
-                <button type="submit" class="btn btn-primary btn-full">Proceed to Payment</button>
+
+                <div style="color: #E11D48; font-size: 0.78rem; font-weight: 600; margin-bottom: 1rem;">
+                    * Strict No-Refunds Policy applies after purchase.
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-full modal-submit-btn">
+                    <i class="fas fa-lock" style="margin-right: 0.5rem;"></i>
+                    Confirm Purchase
+                </button>
             </form>
         </div>
     </div>
